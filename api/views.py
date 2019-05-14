@@ -2,8 +2,8 @@ from django.contrib.auth.models import User
 from rest_framework import viewsets
 
 from api.serializers import UserSerializer
-from .models import Employee
-from .serializers import EmployeeSerializer
+from .models import Employee, JobPosition
+from .serializers import EmployeeSerializer, JobPositionSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -14,3 +14,8 @@ class UserViewSet(viewsets.ModelViewSet):
 class EmployeeViewSet(viewsets.ModelViewSet):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
+
+
+class JobPositionViewSet(viewsets.ModelViewSet):
+    queryset = JobPosition.objects.all()
+    serializer_class =  JobPositionSerializer
